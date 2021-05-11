@@ -1,0 +1,9 @@
+.MemesOutput {
+	margin-top: 25px;
+}
+.MemesOutput-memes {
+	border: 1px solid black;
+	margin: 10px;
+	padding: 10px;
+	background-color: rgb(200, 225, 225);
+}

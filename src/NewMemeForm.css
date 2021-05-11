@@ -1,0 +1,15 @@
+.NewMemeForm {
+	margin-top: 25px;
+	width: fit-content;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 15px;
+	border: solid 1px black;
+	border-radius: 1%;
+    background-color: rgb(200, 225, 225);
+}
+
+.NewMemeForm-InputGroup{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
