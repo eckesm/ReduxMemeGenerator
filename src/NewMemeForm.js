@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
 import { Alert, Button, Form, InputGroup, InputGroupAddon, InputGroupText, Input } from 'reactstrap';
 import './NewMemeForm.css';
 
-const NewMemeForm = () => {
+const NewMemeForm = ({addMeme}) => {
 	const INITIAL_STATE = {
 		imageSrc   : '',
 		topText    : '',
@@ -11,7 +10,6 @@ const NewMemeForm = () => {
 	};
 	const [ formData, setFormData ] = useState(INITIAL_STATE);
 	const [ errorMessages, setErrorMessages ] = useState(false);
-	const dispatch = useDispatch();
 
 	const handleChange = e => {
 		const { name, value } = e.target;
@@ -27,12 +25,7 @@ const NewMemeForm = () => {
 		}
 		else {
 			setErrorMessages(false);
-			dispatch({
-				type       : 'ADD_MEME',
-				imageSrc   : formData.imageSrc,
-				topText    : formData.topText,
-				bottomText : formData.bottomText
-			});
+            addMeme(formData)
 		}
 	};
 	return (

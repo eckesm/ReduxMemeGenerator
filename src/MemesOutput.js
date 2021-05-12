@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import Meme from './Meme';
 import './MemesOutput.css';
 
-const MemesOutput = () => {
+const MemesOutput = ({deleteMeme}) => {
 	const memes = useSelector(store => store.memes);
 
 	return (
@@ -13,10 +13,10 @@ const MemesOutput = () => {
 				{memes.map(meme => (
 					<Meme
 						key={meme.id}
-						id={meme.id}
 						imageSrc={meme.imageSrc}
 						topText={meme.topText}
 						bottomText={meme.bottomText}
+                        deleteMeme={()=>deleteMeme(meme.id)}
 					/>
 				))}
 			</div>
